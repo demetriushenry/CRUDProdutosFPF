@@ -98,7 +98,7 @@ public class ProductController {
 			throw new ProductNotFoundException(id);
 
 		facade.deleteProduct(id);
-		return ResponseEntity.ok().build();
+		return ResponseEntity.noContent().build();
 	}
 
 }
