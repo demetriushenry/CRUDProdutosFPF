@@ -35,6 +35,14 @@ public class Product implements Serializable {
 	public Product() {
 	}
 
+	public Product(String description, byte[] image, BigDecimal price, Origin origin, Category category) {
+		this.description = description;
+		this.image = image;
+		this.price = price;
+		this.origin = origin;
+		this.category = category;
+	}
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 
@@ -47,7 +55,7 @@ public class Product implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "description", nullable = false, columnDefinition = "VARCHAR")
+	@Column(name = "description", nullable = false)
 	public String getDescription() {
 		return description;
 	}
